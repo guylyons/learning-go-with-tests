@@ -1,1 +1,1 @@
-just me practicing Go with https://github.com/quii/learn-go-with-tests/tree/master/hello-world
+just me practicing Go with https://github.com/quii/learn-go-with-tests
