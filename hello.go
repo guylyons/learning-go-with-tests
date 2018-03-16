@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-const helloPrefix = "Hello, "
+const englishPrefix = "Hello, "
 const spanish = "Spanish"
 const spanishHelloPrefix = "Hola, "
 const french = "French"
@@ -11,18 +11,22 @@ const frenchHelloPrefix = "Bonjour, "
 // Hello will print out "Hello, World"
 func Hello(name string, language string) string {
 	if name == "" {
-		return helloPrefix + "World"
+		name = "World"
 	}
 
-	if language == spanish {
-		return spanishHelloPrefix + name
-	}
+	return greetingPrefix(language) + name
+}
 
-	if language == french {
-		return frenchHelloPrefix + name
+func greetingPrefix(language string) (prefix string) {
+	switch language {
+	case french:
+		prefix = frenchHelloPrefix
+	case spanish:
+		prefix = spanishHelloPrefix
+	default:
+		prefix = englishPrefix
 	}
-
-	return helloPrefix + name
+	return
 }
 
 func main() {
